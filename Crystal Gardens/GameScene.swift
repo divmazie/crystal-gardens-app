@@ -9,7 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    var level: Level!
+    var grid: Grid!
     
     let TileSize: CGFloat = 32.0
     
@@ -52,7 +52,7 @@ class GameScene: SKScene {
         let location = touch!.locationInNode(piecesLayer)
         let (success, column, row) = convertPoint(location)
         if success {
-            if let gridpoint = level.pointAt(column, row: row) {
+            if let gridpoint = grid.pointAt(column, row: row) {
                 gridpoint.clicked()
             }
         }

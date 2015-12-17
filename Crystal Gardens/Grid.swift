@@ -11,7 +11,7 @@ import SpriteKit
 let NumColumns = 9
 let NumRows = 9
 
-class Level {
+class Grid {
     private var board = Array2D<GridPoint>(columns: NumColumns, rows: NumRows)
     
     func pointAt(column: Int, row: Int) -> GridPoint? {

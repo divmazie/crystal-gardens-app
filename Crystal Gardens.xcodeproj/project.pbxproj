@@ -17,7 +17,7 @@
 		33C8ADEB1C222565001102B3 /* Crystal_GardensUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADEA1C222565001102B3 /* Crystal_GardensUITests.swift */; };
 		33C8ADFA1C225E14001102B3 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADF91C225E14001102B3 /* Piece.swift */; };
 		33C8ADFC1C225F94001102B3 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFB1C225F94001102B3 /* Array2D.swift */; };
-		33C8ADFE1C2260CF001102B3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFD1C2260CF001102B3 /* Level.swift */; };
+		33C8ADFE1C2260CF001102B3 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFD1C2260CF001102B3 /* Grid.swift */; };
 		33C8AE001C227536001102B3 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFF1C227536001102B3 /* GridPoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		33C8ADEC1C222565001102B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C8ADF91C225E14001102B3 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		33C8ADFB1C225F94001102B3 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
-		33C8ADFD1C2260CF001102B3 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		33C8ADFD1C2260CF001102B3 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		33C8ADFF1C227536001102B3 /* GridPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +142,7 @@
 			children = (
 				33C8ADF91C225E14001102B3 /* Piece.swift */,
 				33C8ADFB1C225F94001102B3 /* Array2D.swift */,
-				33C8ADFD1C2260CF001102B3 /* Level.swift */,
+				33C8ADFD1C2260CF001102B3 /* Grid.swift */,
 				33C8ADFF1C227536001102B3 /* GridPoint.swift */,
 			);
 			name = Classes;
@@ -279,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C8ADFE1C2260CF001102B3 /* Level.swift in Sources */,
+				33C8ADFE1C2260CF001102B3 /* Grid.swift in Sources */,
 				33C8ADFA1C225E14001102B3 /* Piece.swift in Sources */,
 				33C8ADCB1C222565001102B3 /* GameScene.swift in Sources */,
 				33C8ADCD1C222565001102B3 /* GameViewController.swift in Sources */,

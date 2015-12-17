@@ -11,17 +11,17 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     var scene: GameScene!
-    var level: Level!
+    var grid: Grid!
     
     func beginGame() {
-        level.createGridPoints()
-        level.linkSKNodes(scene.piecesLayer, tileSize: scene.TileSize)
+        grid.createGridPoints()
+        grid.linkSKNodes(scene.piecesLayer, tileSize: scene.TileSize)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        level = Level()
+        grid = Grid()
         
         // Configure the view.
         let skView = self.view as! SKView
@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
         skView.showsNodeCount = true
 
         scene = GameScene(size: skView.bounds.size)
-        scene.level = level
+        scene.grid = grid
         /* Sprite Kit applies additional optimizations to improve rendering performance */
         skView.ignoresSiblingOrder = true
         
