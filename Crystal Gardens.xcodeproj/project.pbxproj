@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		33C8ADC71C222565001102B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADC61C222565001102B3 /* AppDelegate.swift */; };
-		33C8ADC91C222565001102B3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 33C8ADC81C222565001102B3 /* GameScene.sks */; };
 		33C8ADCB1C222565001102B3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADCA1C222565001102B3 /* GameScene.swift */; };
 		33C8ADCD1C222565001102B3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADCC1C222565001102B3 /* GameViewController.swift */; };
 		33C8ADD01C222565001102B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C8ADCE1C222565001102B3 /* Main.storyboard */; };
@@ -16,6 +15,10 @@
 		33C8ADD51C222565001102B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C8ADD31C222565001102B3 /* LaunchScreen.storyboard */; };
 		33C8ADE01C222565001102B3 /* Crystal_GardensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADDF1C222565001102B3 /* Crystal_GardensTests.swift */; };
 		33C8ADEB1C222565001102B3 /* Crystal_GardensUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADEA1C222565001102B3 /* Crystal_GardensUITests.swift */; };
+		33C8ADFA1C225E14001102B3 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADF91C225E14001102B3 /* Piece.swift */; };
+		33C8ADFC1C225F94001102B3 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFB1C225F94001102B3 /* Array2D.swift */; };
+		33C8ADFE1C2260CF001102B3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFD1C2260CF001102B3 /* Level.swift */; };
+		33C8AE001C227536001102B3 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADFF1C227536001102B3 /* GridPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 /* Begin PBXFileReference section */
 		33C8ADC31C222565001102B3 /* Crystal Gardens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crystal Gardens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8ADC61C222565001102B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33C8ADC81C222565001102B3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		33C8ADCA1C222565001102B3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		33C8ADCC1C222565001102B3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		33C8ADCF1C222565001102B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		33C8ADE61C222565001102B3 /* Crystal GardensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crystal GardensUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8ADEA1C222565001102B3 /* Crystal_GardensUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crystal_GardensUITests.swift; sourceTree = "<group>"; };
 		33C8ADEC1C222565001102B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33C8ADF91C225E14001102B3 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		33C8ADFB1C225F94001102B3 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		33C8ADFD1C2260CF001102B3 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		33C8ADFF1C227536001102B3 /* GridPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,8 @@
 		33C8ADC51C222565001102B3 /* Crystal Gardens */ = {
 			isa = PBXGroup;
 			children = (
+				33C8ADF81C225DDA001102B3 /* Classes */,
 				33C8ADC61C222565001102B3 /* AppDelegate.swift */,
-				33C8ADC81C222565001102B3 /* GameScene.sks */,
 				33C8ADCA1C222565001102B3 /* GameScene.swift */,
 				33C8ADCC1C222565001102B3 /* GameViewController.swift */,
 				33C8ADCE1C222565001102B3 /* Main.storyboard */,
@@ -129,6 +135,17 @@
 				33C8ADEC1C222565001102B3 /* Info.plist */,
 			);
 			path = "Crystal GardensUITests";
+			sourceTree = "<group>";
+		};
+		33C8ADF81C225DDA001102B3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				33C8ADF91C225E14001102B3 /* Piece.swift */,
+				33C8ADFB1C225F94001102B3 /* Array2D.swift */,
+				33C8ADFD1C2260CF001102B3 /* Level.swift */,
+				33C8ADFF1C227536001102B3 /* GridPoint.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +252,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C8ADC91C222565001102B3 /* GameScene.sks in Resources */,
 				33C8ADD51C222565001102B3 /* LaunchScreen.storyboard in Resources */,
 				33C8ADD21C222565001102B3 /* Assets.xcassets in Resources */,
 				33C8ADD01C222565001102B3 /* Main.storyboard in Resources */,
@@ -263,9 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C8ADFE1C2260CF001102B3 /* Level.swift in Sources */,
+				33C8ADFA1C225E14001102B3 /* Piece.swift in Sources */,
 				33C8ADCB1C222565001102B3 /* GameScene.swift in Sources */,
 				33C8ADCD1C222565001102B3 /* GameViewController.swift in Sources */,
 				33C8ADC71C222565001102B3 /* AppDelegate.swift in Sources */,
+				33C8ADFC1C225F94001102B3 /* Array2D.swift in Sources */,
+				33C8AE001C227536001102B3 /* GridPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
