@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     func beginGame() {
         grid.createGridPoints()
         grid.linkSKNodes(scene.piecesLayer, tileSize: scene.TileSize)
+        scene.assignPlayers()
     }
 
     override func viewDidLoad() {

@@ -15,12 +15,15 @@ class GameScene: SKScene {
     
     let gameLayer = SKNode()
     let piecesLayer = SKNode()
+    var players: [Player]!
+    var currentPlayer: Int
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
     }
     
     override init(size: CGSize) {
+        currentPlayer = 0
         super.init(size: size)
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -41,9 +44,22 @@ class GameScene: SKScene {
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!"
         myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        myLabel.position = CGPoint(x: 0,y: 0)
         
         //self.addChild(myLabel)
+    }
+    
+    func assignPlayers() {
+        players = [Player(number: 0, color: UIColor(red:0,green:1,blue:0,alpha:1)),Player(number: 1, color: UIColor(red:0,green:0,blue:1,alpha:1))]
+        currentPlayer = 0
+    }
+    
+    func advanceTurn() {
+        players[currentPlayer].endTurn()
+        currentPlayer++
+        if (currentPlayer >= players.count) {
+            currentPlayer = 0
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -53,9 +69,10 @@ class GameScene: SKScene {
         let (success, column, row) = convertPoint(location)
         if success {
             if let gridpoint = grid.pointAt(column, row: row) {
-                gridpoint.clicked()
+                gridpoint.clicked(players[currentPlayer])
             }
         }
+        advanceTurn()
         
         /*
         for touch in touches {

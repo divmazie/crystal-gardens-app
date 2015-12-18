@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33C4127A1C23676C005AF6F6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C412791C23676C005AF6F6 /* Player.swift */; };
+		33C4127C1C23CA56005AF6F6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4127B1C23CA56005AF6F6 /* Extensions.swift */; };
 		33C8ADC71C222565001102B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADC61C222565001102B3 /* AppDelegate.swift */; };
 		33C8ADCB1C222565001102B3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADCA1C222565001102B3 /* GameScene.swift */; };
 		33C8ADCD1C222565001102B3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADCC1C222565001102B3 /* GameViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33C412791C23676C005AF6F6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		33C4127B1C23CA56005AF6F6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		33C8ADC31C222565001102B3 /* Crystal Gardens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crystal Gardens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8ADC61C222565001102B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C8ADCA1C222565001102B3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				33C8ADD11C222565001102B3 /* Assets.xcassets */,
 				33C8ADD31C222565001102B3 /* LaunchScreen.storyboard */,
 				33C8ADD61C222565001102B3 /* Info.plist */,
+				33C4127B1C23CA56005AF6F6 /* Extensions.swift */,
 			);
 			path = "Crystal Gardens";
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				33C8ADFB1C225F94001102B3 /* Array2D.swift */,
 				33C8ADFD1C2260CF001102B3 /* Grid.swift */,
 				33C8ADFF1C227536001102B3 /* GridPoint.swift */,
+				33C412791C23676C005AF6F6 /* Player.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -280,9 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C8ADFE1C2260CF001102B3 /* Grid.swift in Sources */,
+				33C4127C1C23CA56005AF6F6 /* Extensions.swift in Sources */,
 				33C8ADFA1C225E14001102B3 /* Piece.swift in Sources */,
 				33C8ADCB1C222565001102B3 /* GameScene.swift in Sources */,
 				33C8ADCD1C222565001102B3 /* GameViewController.swift in Sources */,
+				33C4127A1C23676C005AF6F6 /* Player.swift in Sources */,
 				33C8ADC71C222565001102B3 /* AppDelegate.swift in Sources */,
 				33C8ADFC1C225F94001102B3 /* Array2D.swift in Sources */,
 				33C8AE001C227536001102B3 /* GridPoint.swift in Sources */,
@@ -514,6 +522,7 @@
 				33C8ADF11C222565001102B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33C8ADF21C222565001102B3 /* Build configuration list for PBXNativeTarget "Crystal GardensTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +531,7 @@
 				33C8ADF41C222565001102B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33C8ADF51C222565001102B3 /* Build configuration list for PBXNativeTarget "Crystal GardensUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +540,7 @@
 				33C8ADF71C222565001102B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
