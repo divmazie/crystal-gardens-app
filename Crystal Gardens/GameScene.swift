@@ -50,7 +50,7 @@ class GameScene: SKScene {
     }
     
     func assignPlayers() {
-        players = [Player(number: 0, color: UIColor(red:0,green:1,blue:0,alpha:1)),Player(number: 1, color: UIColor(red:0,green:0,blue:1,alpha:1))]
+        players = [Player(number: 0, color: UIColor(red:0,green:1,blue:0,alpha:1), colorname: "green"),Player(number: 1, color: UIColor(red:0,green:0,blue:1,alpha:1), colorname: "blue")]
         currentPlayer = 0
     }
     
@@ -69,10 +69,13 @@ class GameScene: SKScene {
         let (success, column, row) = convertPoint(location)
         if success {
             if let gridpoint = grid.pointAt(column, row: row) {
-                gridpoint.clicked(players[currentPlayer])
+                if gridpoint.clicked(players[currentPlayer]) {
+                    advanceTurn()
+                }
             }
+        } else {
+            advanceTurn()
         }
-        advanceTurn()
         
         /*
         for touch in touches {

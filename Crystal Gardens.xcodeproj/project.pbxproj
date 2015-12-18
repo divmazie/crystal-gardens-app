@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		33C4127A1C23676C005AF6F6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C412791C23676C005AF6F6 /* Player.swift */; };
 		33C4127C1C23CA56005AF6F6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4127B1C23CA56005AF6F6 /* Extensions.swift */; };
+		33C412821C248ACB005AF6F6 /* creeper_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C412811C248ACB005AF6F6 /* creeper_green.png */; };
+		33C412841C248D79005AF6F6 /* creeper_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C412831C248D79005AF6F6 /* creeper_blue.png */; };
+		33C412881C249FB9005AF6F6 /* decay_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C412861C249FB9005AF6F6 /* decay_blue.png */; };
+		33C412891C249FB9005AF6F6 /* decay_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C412871C249FB9005AF6F6 /* decay_green.png */; };
+		33C4128C1C24ACF4005AF6F6 /* flower_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C4128A1C24ACF4005AF6F6 /* flower_blue.png */; };
+		33C4128D1C24ACF4005AF6F6 /* flower_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C4128B1C24ACF4005AF6F6 /* flower_green.png */; };
 		33C8ADC71C222565001102B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADC61C222565001102B3 /* AppDelegate.swift */; };
 		33C8ADCB1C222565001102B3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADCA1C222565001102B3 /* GameScene.swift */; };
 		33C8ADCD1C222565001102B3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8ADCC1C222565001102B3 /* GameViewController.swift */; };
@@ -43,6 +49,12 @@
 /* Begin PBXFileReference section */
 		33C412791C23676C005AF6F6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		33C4127B1C23CA56005AF6F6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		33C412811C248ACB005AF6F6 /* creeper_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = creeper_green.png; path = Assets.xcassets/creeper_green.png; sourceTree = "<group>"; };
+		33C412831C248D79005AF6F6 /* creeper_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = creeper_blue.png; path = Assets.xcassets/creeper_blue.png; sourceTree = "<group>"; };
+		33C412861C249FB9005AF6F6 /* decay_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = decay_blue.png; path = Assets.xcassets/decay_blue.png; sourceTree = "<group>"; };
+		33C412871C249FB9005AF6F6 /* decay_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = decay_green.png; path = Assets.xcassets/decay_green.png; sourceTree = "<group>"; };
+		33C4128A1C24ACF4005AF6F6 /* flower_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flower_blue.png; path = Assets.xcassets/flower_blue.png; sourceTree = "<group>"; };
+		33C4128B1C24ACF4005AF6F6 /* flower_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flower_green.png; path = Assets.xcassets/flower_green.png; sourceTree = "<group>"; };
 		33C8ADC31C222565001102B3 /* Crystal Gardens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crystal Gardens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8ADC61C222565001102B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C8ADCA1C222565001102B3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -88,6 +100,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33C412851C249927005AF6F6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				33C4128A1C24ACF4005AF6F6 /* flower_blue.png */,
+				33C4128B1C24ACF4005AF6F6 /* flower_green.png */,
+				33C412861C249FB9005AF6F6 /* decay_blue.png */,
+				33C412871C249FB9005AF6F6 /* decay_green.png */,
+				33C412831C248D79005AF6F6 /* creeper_blue.png */,
+				33C412811C248ACB005AF6F6 /* creeper_green.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		33C8ADBA1C222565001102B3 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +142,7 @@
 				33C8ADCC1C222565001102B3 /* GameViewController.swift */,
 				33C8ADCE1C222565001102B3 /* Main.storyboard */,
 				33C8ADD11C222565001102B3 /* Assets.xcassets */,
+				33C412851C249927005AF6F6 /* Images */,
 				33C8ADD31C222565001102B3 /* LaunchScreen.storyboard */,
 				33C8ADD61C222565001102B3 /* Info.plist */,
 				33C4127B1C23CA56005AF6F6 /* Extensions.swift */,
@@ -258,8 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C4128C1C24ACF4005AF6F6 /* flower_blue.png in Resources */,
+				33C412881C249FB9005AF6F6 /* decay_blue.png in Resources */,
+				33C4128D1C24ACF4005AF6F6 /* flower_green.png in Resources */,
 				33C8ADD51C222565001102B3 /* LaunchScreen.storyboard in Resources */,
+				33C412841C248D79005AF6F6 /* creeper_blue.png in Resources */,
 				33C8ADD21C222565001102B3 /* Assets.xcassets in Resources */,
+				33C412891C249FB9005AF6F6 /* decay_green.png in Resources */,
+				33C412821C248ACB005AF6F6 /* creeper_green.png in Resources */,
 				33C8ADD01C222565001102B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

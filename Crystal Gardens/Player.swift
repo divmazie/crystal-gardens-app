@@ -12,14 +12,16 @@ import SpriteKit
 class Player {
     let number: Int
     let color: UIColor
+    let colorname: String
     var creepers: [GridPoint]
     var flowers: [GridPoint]
     
-    init(number: Int, color: UIColor) {
+    init(number: Int, color: UIColor, colorname: String) {
         self.number = number
         self.creepers = [GridPoint]()
         self.flowers = [GridPoint]()
         self.color = color
+        self.colorname = colorname
     }
     
     func addCreeper(point: GridPoint) {

@@ -26,14 +26,16 @@ extension Array where Element: Equatable {
 
 
 func darkenUIColor(color: UIColor, amount: CGFloat) -> UIColor {
+    let inverseAmount = 1-amount
     let cicolor = CIColor(color: color)
-    return UIColor(red: cicolor.red*amount, green: cicolor.green*amount, blue: cicolor.blue*amount, alpha: cicolor.alpha)
+    return UIColor(red: cicolor.red*inverseAmount, green: cicolor.green*inverseAmount, blue: cicolor.blue*inverseAmount, alpha: cicolor.alpha)
 }
 
 func lightenUIColor(color: UIColor, amount: CGFloat) -> UIColor {
+    let inverseAmount = 1-amount
     let cicolor = CIColor(color: color)
-    let newRed = 1 - (1 - cicolor.red) * amount
-    let newGreen = 1 - (1 - cicolor.green) * amount
-    let newBlue = 1 - (1 - cicolor.blue) * amount
+    let newRed = 1 - (1 - cicolor.red) * inverseAmount
+    let newGreen = 1 - (1 - cicolor.green) * inverseAmount
+    let newBlue = 1 - (1 - cicolor.blue) * inverseAmount
     return UIColor(red: newRed, green: newGreen, blue: newBlue, alpha: cicolor.alpha)
 }
