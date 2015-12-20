@@ -12,7 +12,7 @@ let NumColumns = 11
 let NumRows = 11
 
 enum DirectionPreference: UInt32 {
-    case nbne, nebn, nebe, ebn, ebs, sebe, sebs, sbe, sbw, swbs, swbw, wbs, wbn, nwbw, nwbn, nbw
+    case nbe, nebn, nebe, ebn, ebs, sebe, sebs, sbe, sbw, swbs, swbw, wbs, wbn, nwbw, nwbn, nbw
     static func randomDirectionPreference() -> DirectionPreference {
         // pick and return a new value
         let rand = arc4random_uniform(16)
@@ -28,7 +28,7 @@ class Grid {
     init() {
         directionPreference = DirectionPreference.randomDirectionPreference()
         switch directionPreference {
-        case .nbne:
+        case .nbe:
             directionOrder = [[0,1], [1,1], [-1,1], [1,0], [-1,0], [1,-1], [-1,-1], [0,-1]]
         case .nebn:
             directionOrder = [[1,1], [0,1], [1,0], [-1,1], [1,-1], [-1,0], [0,-1], [-1,-1]]

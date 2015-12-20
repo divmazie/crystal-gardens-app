@@ -41,12 +41,52 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
+        let myLabel = SKLabelNode()
+        myLabel.name = "currentPlayer"
+        myLabel.text = "Player 1's turn"
         myLabel.fontSize = 45
-        myLabel.position = CGPoint(x: 0,y: 0)
+        myLabel.fontColor = UIColor.greenColor()
+        myLabel.position = CGPoint(x: 0, y: 275)
+        self.addChild(myLabel)
         
-        //self.addChild(myLabel)
+        let dirLabel = SKLabelNode()
+        dirLabel.fontSize = 20
+        dirLabel.position = CGPoint(x: 0, y: 225)
+        switch grid.directionPreference {
+        case .nbe:
+            dirLabel.text = "North by East";
+        case .nebn:
+            dirLabel.text = "Northeast by North";
+        case .nebe:
+            dirLabel.text = "Northeast by East";
+        case .ebn:
+            dirLabel.text = "East by North";
+        case .ebs:
+            dirLabel.text = "East by South"
+        case .sebe:
+            dirLabel.text = "Southeast by East";
+        case .sebs:
+            dirLabel.text = "Southeast by South";
+        case .sbe:
+            dirLabel.text = "South by East";
+        case .sbw:
+            dirLabel.text = "South by West";
+        case .swbs:
+            dirLabel.text = "Southwest by South";
+        case .swbw:
+            dirLabel.text = "Southwest by West";
+        case .wbs:
+            dirLabel.text = "West by South"
+        case .wbn:
+            dirLabel.text = "West by North"
+        case .nwbw:
+            dirLabel.text = "Northwest by West";
+        case .nwbn:
+            dirLabel.text = "Northwest by North";
+        case .nbw:
+            dirLabel.text = "North by West";
+        }
+        self.addChild(dirLabel)
     }
     
     func assignPlayers() {
@@ -60,6 +100,9 @@ class GameScene: SKScene {
         if (currentPlayer >= players.count) {
             currentPlayer = 0
         }
+        let myLabel = self.childNodeWithName("currentPlayer") as! SKLabelNode
+        myLabel.fontColor = lightenUIColor(players[currentPlayer].color, amount: 0.3)
+        myLabel.text = "Player \(currentPlayer+1)'s turn"
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
