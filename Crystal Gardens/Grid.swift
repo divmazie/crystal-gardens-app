@@ -87,7 +87,7 @@ class Grid {
             for column in 0..<NumColumns {
                 let point = pointAt(column, row: row)
                 point!.linkSKNodes(piecesLayer)
-                point!.node!.position = pointForColumn(column, row: row, tileSize: tileSize)
+                point!.tile!.position = pointForColumn(column, row: row, tileSize: tileSize)
                 point!.tile!.name = String(column)+" "+String(row)
             }
         }

@@ -5,18 +5,23 @@
 //  Created by David on 12/16/15.
 //  Copyright © 2015 David Mackenzie. All rights reserved.
 //
-/*
+
 import SpriteKit
 
 class Piece {
-    var column: Int
-    var row: Int
-    var sprite: SKNode?
+    let point: GridPoint
+    let type: PieceType
+    //var sprite: SKSpriteNode
     
-    init(column: Int, row: Int, label: String) {
-        self.column = column
-        self.row = row
-        
+    init(point: GridPoint, type: PieceType) {
+        self.point = point
+        self.type = type
+        //sprite = SKSpriteNode(imageNamed: "\(type.rawValue)")
+        //sprite!.size = CGSize(width: 32, height: 32)
+        //tile!.addChild(sprite!)
+    }
+    
+    deinit {
+        //sprite.removeFromParent()
     }
 }
-*/
