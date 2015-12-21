@@ -52,40 +52,7 @@ class GameScene: SKScene {
         let dirLabel = SKLabelNode()
         dirLabel.fontSize = 20
         dirLabel.position = CGPoint(x: 0, y: 225)
-        switch grid.directionPreference {
-        case .nbe:
-            dirLabel.text = "North by East";
-        case .nebn:
-            dirLabel.text = "Northeast by North";
-        case .nebe:
-            dirLabel.text = "Northeast by East";
-        case .ebn:
-            dirLabel.text = "East by North";
-        case .ebs:
-            dirLabel.text = "East by South"
-        case .sebe:
-            dirLabel.text = "Southeast by East";
-        case .sebs:
-            dirLabel.text = "Southeast by South";
-        case .sbe:
-            dirLabel.text = "South by East";
-        case .sbw:
-            dirLabel.text = "South by West";
-        case .swbs:
-            dirLabel.text = "Southwest by South";
-        case .swbw:
-            dirLabel.text = "Southwest by West";
-        case .wbs:
-            dirLabel.text = "West by South"
-        case .wbn:
-            dirLabel.text = "West by North"
-        case .nwbw:
-            dirLabel.text = "Northwest by West";
-        case .nwbn:
-            dirLabel.text = "Northwest by North";
-        case .nbw:
-            dirLabel.text = "North by West";
-        }
+        dirLabel.text = grid.directionPreference.label()
         self.addChild(dirLabel)
     }
     

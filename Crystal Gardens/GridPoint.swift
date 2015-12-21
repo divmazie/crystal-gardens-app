@@ -8,17 +8,11 @@
 
 import SpriteKit
 
-enum PieceType {
-    case Post, Growth, Wall, Creeper, Decay, Flower
-}
-
 class GridPoint: Equatable {
     var column: Int
     var row: Int
     var grid: Grid
-    //var node: SKNode?
     var tile: SKShapeNode?
-    var sprite: SKSpriteNode?
     var occupyingPlayer: Player?
     var piece: Piece?
     var spawned: Bool
@@ -32,8 +26,6 @@ class GridPoint: Equatable {
     }
     
     func linkSKNodes(parent: SKNode) {
-        //node = SKNode()
-        //parent.addChild(node!)
         tile = SKShapeNode(rectOfSize: CGSize(width: 20, height: 20))
         tile!.fillColor = SKColor.blackColor()
         parent.addChild(tile!)
@@ -53,43 +45,31 @@ class GridPoint: Equatable {
     }
     
     func clearPiece() {
-        occupyingPlayer!.removeCreeper(self)
+        occupyingPlayer!.removeCreeper(piece!)
         occupyingPlayer = nil
         piece = nil
         tile!.fillColor = UIColor.blackColor()
         spawned = false
     }
     
-    func addSprite(imageNamed: String) {
-        if (sprite != nil) {
-            sprite!.removeFromParent()
-        }
-        sprite = SKSpriteNode(imageNamed: imageNamed)
-        sprite!.size = CGSize(width: 32, height: 32)
-        tile!.addChild(sprite!)
-    }
-    
     func makeCreeper(player: Player) {
-        piece = Piece(point: self, type: PieceType.Creeper)
         occupyingPlayer = player
-        addSprite("creeper_\(player.colorname).png")
+        piece = Piece(point: self, type: PieceType.Creeper)
         tile!.fillColor = UIColor.yellowColor()
-        player.addCreeper(self)
+        player.addCreeper(piece!)
         spawned = false
     }
     
     func makeDecay() {
-        addSprite("decay_\(occupyingPlayer!.colorname).png")
         tile!.fillColor = SKColor.blackColor()
-        occupyingPlayer!.removeCreeper(self)
+        occupyingPlayer!.removeCreeper(piece!)
         piece = Piece(point: self, type: PieceType.Decay)
         spawned = false
     }
     
     func makeFlower() {
-        addSprite("flower_\(occupyingPlayer!.colorname).png")
-        occupyingPlayer!.addFlower(self)
         piece = Piece(point: self, type: PieceType.Flower)
+        occupyingPlayer!.addFlower(piece!)
         spawned = false
     }
     
@@ -98,24 +78,6 @@ class GridPoint: Equatable {
             return true
         } else {
             return false
-        }
-    }
-    
-    func creeperSpawn() {
-        if (!spawned) {
-            let nextpoint = grid.nextCreeperPoint(column, row: row, player: occupyingPlayer!)
-            if (nextpoint != nil) {
-                nextpoint?.makeCreeper(occupyingPlayer!)
-            }
-            spawned = true
-            tile!.fillColor = UIColor.blackColor()
-        }
-    }
-    
-    func creeperDecay() {
-        let nextpoint = grid.nextCreeperPoint(column, row: row, player: occupyingPlayer!)
-        if (nextpoint == nil) {
-            makeDecay()
         }
     }
 }

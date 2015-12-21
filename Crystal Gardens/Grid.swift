@@ -11,15 +11,6 @@ import SpriteKit
 let NumColumns = 11
 let NumRows = 11
 
-enum DirectionPreference: UInt32 {
-    case nbe, nebn, nebe, ebn, ebs, sebe, sebs, sbe, sbw, swbs, swbw, wbs, wbn, nwbw, nwbn, nbw
-    static func randomDirectionPreference() -> DirectionPreference {
-        // pick and return a new value
-        let rand = arc4random_uniform(16)
-        return DirectionPreference(rawValue: rand)!
-    }
-}
-
 class Grid {
     private var board = Array2D<GridPoint>(columns: NumColumns, rows: NumRows)
     let directionPreference: DirectionPreference
@@ -27,40 +18,7 @@ class Grid {
     
     init() {
         directionPreference = DirectionPreference.randomDirectionPreference()
-        switch directionPreference {
-        case .nbe:
-            directionOrder = [[0,1], [1,1], [-1,1], [1,0], [-1,0], [1,-1], [-1,-1], [0,-1]]
-        case .nebn:
-            directionOrder = [[1,1], [0,1], [1,0], [-1,1], [1,-1], [-1,0], [0,-1], [-1,-1]]
-        case .nebe:
-            directionOrder = [[1,1], [1,0], [0,1], [1,-1], [-1,1], [0,-1], [-1,0], [-1,-1]]
-        case .ebn:
-            directionOrder = [[1,0], [1,1], [1,-1], [0,1], [0,-1], [-1,1], [-1,-1], [-1,0]]
-        case .ebs:
-            directionOrder = [[1,0], [1,-1], [1,1], [0,-1], [0,1], [-1,-1], [-1,1], [-1,0]]
-        case .sebe:
-            directionOrder = [[1,-1], [1,0], [0,-1], [1,1], [-1,-1], [0,1], [-1,0], [-1,1]]
-        case .sebs:
-            directionOrder = [[1,-1], [0,-1], [1,0], [-1,-1], [1,1], [-1,0], [0,1], [-1,1]]
-        case .sbe:
-            directionOrder = [[0,-1], [1,-1], [-1,-1], [1,0], [-1,0], [1,1], [-1,1], [0,1]]
-        case .sbw:
-            directionOrder = [[0,-1], [-1,-1], [1,-1], [-1,0], [1,0], [-1,1], [1,1], [0,1]]
-        case .swbs:
-            directionOrder = [[-1,-1], [0,-1], [-1,0], [1,-1], [-1,1], [1,0], [0,1], [1,1]]
-        case .swbw:
-            directionOrder = [[-1,-1], [-1,0], [0,-1], [-1,1], [1,-1], [0,1], [1,0], [1,1]]
-        case .wbs:
-            directionOrder = [[-1,0], [-1,-1], [-1,1], [0,-1], [0,1], [1,-1], [1,1], [1,0]]
-        case .wbn:
-            directionOrder = [[-1,0], [-1,1], [-1,-1], [0,1], [0,-1], [1,1], [1,-1], [1,0]]
-        case .nwbw:
-            directionOrder = [[-1,1], [-1,0], [0,1], [-1,-1], [1,1], [0,-1], [1,0], [1,-1]]
-        case .nwbn:
-            directionOrder = [[-1,1], [0,1], [-1,0], [1,1], [-1,-1], [1,0], [0,-1], [1,-1]]
-        case .nbw:
-            directionOrder = [[0,1], [-1,1], [1,1], [-1,0], [1,0], [-1,-1], [1,-1], [0,-1]]
-        }
+        directionOrder = directionPreference.directionOrder()
     }
     
     func pointAt(column: Int, row: Int) -> GridPoint? {

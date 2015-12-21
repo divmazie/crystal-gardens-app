@@ -13,26 +13,26 @@ class Player {
     let number: Int
     let color: UIColor
     let colorname: String
-    var creepers: [GridPoint]
-    var flowers: [GridPoint]
+    var creepers: [Piece]
+    var flowers: [Piece]
     
     init(number: Int, color: UIColor, colorname: String) {
         self.number = number
-        self.creepers = [GridPoint]()
-        self.flowers = [GridPoint]()
+        self.creepers = [Piece]()
+        self.flowers = [Piece]()
         self.color = color
         self.colorname = colorname
     }
     
-    func addCreeper(point: GridPoint) {
-        creepers.append(point)
+    func addCreeper(piece: Piece) {
+        creepers.append(piece)
     }
     
-    func removeCreeper(point: GridPoint) {
-        creepers.removeObject(point)
+    func removeCreeper(piece: Piece) {
+        creepers.removeObject(piece)
     }
     
-    func addFlower(point: GridPoint) {
+    func addFlower(point: Piece) {
         flowers.append(point)
     }
     
