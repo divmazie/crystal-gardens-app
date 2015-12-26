@@ -41,28 +41,40 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode()
-        myLabel.name = "currentPlayer"
-        myLabel.text = "Player 1's turn"
-        myLabel.fontSize = 45
-        myLabel.fontColor = UIColor.greenColor()
-        myLabel.position = CGPoint(x: 0, y: 275)
-        self.addChild(myLabel)
         
         let dirLabel = SKLabelNode()
         dirLabel.fontSize = 20
         dirLabel.position = CGPoint(x: 0, y: 225)
         dirLabel.text = grid.directionPreference.label()
         self.addChild(dirLabel)
+        
     }
     
     func assignPlayers() {
         players = [Player(number: 0, color: UIColor(red:0,green:1,blue:0,alpha:1), colorname: "green"),Player(number: 1, color: UIColor(red:0,green:0,blue:1,alpha:1), colorname: "blue")]
         currentPlayer = 0
+        let myLabel = SKLabelNode()
+        myLabel.name = "currentPlayer"
+        myLabel.text = "Player \(currentPlayer+1)'s turn"
+        myLabel.fontSize = 45
+        myLabel.fontColor = players[currentPlayer].color
+        myLabel.position = CGPoint(x: 0, y: 275)
+        self.addChild(myLabel)
+        for player in players {
+            let playerLabel = SKLabelNode()
+            playerLabel.name = "player\(player.number)Label"
+            playerLabel.fontSize = 20
+            playerLabel.fontColor = lightenUIColor(player.color, amount: 0.4)
+            playerLabel.position = CGPoint(x: -100+player.number*200, y: -220)
+            playerLabel.text = "Vines: 0 Flowers: 0"
+            self.addChild(playerLabel)
+        }
     }
     
     func advanceTurn() {
         players[currentPlayer].endTurn()
+        let playerLabel = self.childNodeWithName("player\(currentPlayer)Label") as! SKLabelNode
+        playerLabel.text = "Vines: \(players[currentPlayer].creepers.count) Flowers: \(players[currentPlayer].flowers.count)"
         currentPlayer++
         if (currentPlayer >= players.count) {
             currentPlayer = 0
