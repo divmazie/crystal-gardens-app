@@ -31,11 +31,11 @@ class GridPoint: Equatable {
         parent.addChild(tile!)
     }
     
-    func clicked(player: Player) -> Bool {
+    func clicked(player: Player, turn: Int) -> Bool {
         if clearForCreeper(player) {
-            makeCreeper(player)
+            makeCreeper(player, turn: turn)
         } else if (piece!.type == PieceType.Decay && player == occupyingPlayer!) {
-            makeFlower()
+            makeFlower(turn)
         } else if (piece!.type == PieceType.Creeper && player == occupyingPlayer!) {
             clearPiece()
         } else {
@@ -52,23 +52,23 @@ class GridPoint: Equatable {
         spawned = false
     }
     
-    func makeCreeper(player: Player) {
+    func makeCreeper(player: Player, turn: Int) {
         occupyingPlayer = player
-        piece = Piece(point: self, type: PieceType.Creeper)
+        piece = Piece(point: self, type: PieceType.Creeper, turn: turn)
         tile!.fillColor = UIColor.yellowColor()
         player.addCreeper(piece!)
         spawned = false
     }
     
-    func makeDecay() {
+    func makeDecay(turn: Int) {
         tile!.fillColor = SKColor.blackColor()
         occupyingPlayer!.removeCreeper(piece!)
-        piece = Piece(point: self, type: PieceType.Decay)
+        piece = Piece(point: self, type: PieceType.Decay, turn: turn)
         spawned = false
     }
     
-    func makeFlower() {
-        piece = Piece(point: self, type: PieceType.Flower)
+    func makeFlower(turn: Int) {
+        piece = Piece(point: self, type: PieceType.Flower, turn: turn)
         occupyingPlayer!.addFlower(piece!)
         spawned = false
     }

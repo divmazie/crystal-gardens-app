@@ -29,12 +29,14 @@ enum PieceType {
 }
 
 class Piece: Equatable {
+    let createdTurn: Int
     let point: GridPoint
     let type: PieceType
     let sprite: SKSpriteNode
     var spawned: Bool
     
-    init(point: GridPoint, type: PieceType) {
+    init(point: GridPoint, type: PieceType, turn: Int) {
+        createdTurn = turn
         self.point = point
         self.type = type
         sprite = SKSpriteNode(imageNamed: "\(type.toString())_\(point.occupyingPlayer!.colorname).png")
@@ -47,21 +49,21 @@ class Piece: Equatable {
         sprite.removeFromParent()
     }
     
-    func creeperSpawn() {
-        if (!spawned) {
+    func creeperSpawn(turn: Int) {
+        if (!spawned && createdTurn<turn) {
             let nextpoint = point.grid.nextCreeperPoint(point.column, row: point.row, player: point.occupyingPlayer!)
             if (nextpoint != nil) {
-                nextpoint?.makeCreeper(point.occupyingPlayer!)
+                nextpoint?.makeCreeper(point.occupyingPlayer!, turn: turn)
             }
             spawned = true
             point.tile!.fillColor = UIColor.blackColor()
         }
     }
     
-    func creeperDecay() {
+    func creeperDecay(turn: Int) {
         let nextpoint = point.grid.nextCreeperPoint(point.column, row: point.row, player: point.occupyingPlayer!)
         if (nextpoint == nil) {
-            point.makeDecay()
+            point.makeDecay(turn)
         }
     }
 }

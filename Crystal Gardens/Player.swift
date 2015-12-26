@@ -36,20 +36,20 @@ class Player {
         flowers.append(point)
     }
     
-    func endTurn() {
-        decayCreepers()
-        spawnCreepers()
+    func endTurn(turn: Int) {
+        decayCreepers(turn)
+        spawnCreepers(turn)
     }
     
-    func decayCreepers() {
+    func decayCreepers(turn: Int) {
         for creeper in creepers {
-            creeper.creeperDecay()
+            creeper.creeperDecay(turn)
         }
     }
     
-    func spawnCreepers() {
+    func spawnCreepers(turn: Int) {
         for creeper in creepers {
-            creeper.creeperSpawn()
+            creeper.creeperSpawn(turn)
         }
     }
 }

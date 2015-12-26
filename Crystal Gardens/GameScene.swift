@@ -17,6 +17,7 @@ class GameScene: SKScene {
     let piecesLayer = SKNode()
     var players: [Player]!
     var currentPlayer: Int
+    var turn: Int
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
@@ -24,6 +25,7 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         currentPlayer = 0
+        turn = 0
         super.init(size: size)
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -72,9 +74,10 @@ class GameScene: SKScene {
     }
     
     func advanceTurn() {
-        players[currentPlayer].endTurn()
+        players[currentPlayer].endTurn(turn)
         let playerLabel = self.childNodeWithName("player\(currentPlayer)Label") as! SKLabelNode
         playerLabel.text = "Vines: \(players[currentPlayer].creepers.count) Flowers: \(players[currentPlayer].flowers.count)"
+        turn++
         currentPlayer++
         if (currentPlayer >= players.count) {
             currentPlayer = 0
@@ -91,7 +94,7 @@ class GameScene: SKScene {
         let (success, column, row) = convertPoint(location)
         if success {
             if let gridpoint = grid.pointAt(column, row: row) {
-                if gridpoint.clicked(players[currentPlayer]) {
+                if gridpoint.clicked(players[currentPlayer], turn: turn) {
                     advanceTurn()
                 }
             }
